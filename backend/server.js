@@ -47,3 +47,14 @@ app.listen(
       `Server running in ${process.env.NODE_ENV} mode on port ${PORT}..`.yellow
         .bold)
     });
+
+    app.connect((err) => {
+      if (err) {
+        console.error(err);
+        return false;
+      }
+      // connection to mongo is successful, listen for requests
+      app.listen(3000, () => {
+        console.log("listening for requests");
+      });
+    });
