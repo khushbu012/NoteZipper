@@ -48,13 +48,4 @@ app.listen(
         .bold)
     });
 
-    app.connect((err) => {
-      if (err) {
-        console.error(err);
-        return false;
-      }
-      // connection to mongo is successful, listen for requests
-      app.listen(3000, () => {
-        console.log("listening for requests");
-      });
-    });
+    
